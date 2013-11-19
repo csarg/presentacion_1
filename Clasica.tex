@@ -1,0 +1,284 @@
+\documentclass{beamer}
+\mode<presentation> { 
+\usetheme{Frankfurt}
+\setbeamertemplate{footline}[frame number]
+\usecolortheme{whale}
+%\setbeamercolor{frametitle}{fg=darkblue, bg=white} 
+%\usecolortheme{rose} 
+\setbeamercovered{transparent}
+ }
+\usepackage[spanish]{babel} 
+\usepackage{graphicx,wrapfig}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage[all]{xy}
+\usepackage{ragged2e}
+\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel}
+%\usepackage{wrapfig}
+
+
+\title{Principio de Hamilton -Dinámica Lagrangiana y Hamiltoniana-} 
+%\institute{Benem\'erita Universidad Aut\'onoma de Puebla}
+\author[José Augusto de la Fuente León, \\ David Pavel] {\textbf{José Augusto de la Fuente León, \\ \ \\David Pavél Juárez López}\\ \ \\
+Profesor:\\
+\emph{Dr. Delepine}}
+\date{Julio 8, 2013}
+%\logo{\includegraphics[height=0.95cm]{escudo.jpg}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\makeatletter
+%%Feynman slash
+%\newbox\slashbox \setbox\slashbox=\hbox{$/$}
+%\newbox\Slashbox \setbox\Slashbox=\hbox{\large$/$}
+%\def\pFMslash#1{\setbox\@tempboxa=\hbox{$#1$}
+%  \@tempdima=0.5\wd\slashbox \advance\@tempdima 0.5\wd\@tempboxa
+%  \copy\slashbox \kern-\@tempdima \box\@tempboxa}
+%\def\pFMSlash#1{\setbox\@tempboxa=\hbox{$#1$}
+%  \@tempdima=0.5\wd\Slashbox \advance\@tempdima 0.5\wd\@tempboxa
+%  \copy\Slashbox \kern-\@tempdima \box\@tempboxa}
+%\def\FMslash{\protect\pFMslash}
+%\def\FMSlash{\protect\pFMSlash}
+%\def\miss#1{\ifmmode{/\mkern-11mu #1}\else{${/\mkern-11mu #1}$}\fi}
+%%%%% Uso:  \pFMSlash{p}
+%\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{frame} 
+%%\pgfimage[height=2.5cm]{buap.jpg}
+%%\begin{picture}(1.5,0.7)
+%%\put(2,-60){\includegraphics[width=1.8cm]{buap.jpg}}
+%%\end{picture}
+\titlepage
+\end{frame} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section[]{Introducción}
+%\subsection{}
+\begin{frame}
+\frametitle{Introducción}
+\justifying
+\begin{itemize}
+\justifying
+\item Experiencias han mostrado que el movimiento de una partícula, en un marco de referencia inercial, es correctamente descrita por la ecuación de Newton $\vec{F} = \dot{\vec{p}}$.
+\item Tal método es contenido en el principio de Hamilton  y la ecuación de movimiento resulta de la aplicación del principio llamado ecuaciones de Lagrange
+\end{itemize}
+ \end{frame}
+ 
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\justifying
+\frametitle{Principio de Hamilton}
+\textit{De todos los posibles caminos a lo largo del cual un sistema dinámico puede moverse de un punto a otro con un intervalo de tiempo especifico (consistente con cualquier restricción), el actual camino seguido es en el cual minimiza la integral temporal de la diferencia entre la energía cinética y la energía potencial}
+\end{frame}
+
+
+\begin{frame}
+\justifying
+\frametitle{}
+En términos de calculo de variaciones, el principio de Hamilton se expresa como,
+\begin{equation}
+\label{ec1}
+\delta \int_{t_1}^{t_2} (T-U) dt =0 
+\end{equation}
+donde el símbolo $\delta$ es una abreviatura para describir la variación.
+\\ Ahora 
+\begin{equation}
+T=T(\dot{x}_i), \qquad U=U(x_i)
+\end{equation}
+Si definimos la diferencia de estas cantidades, como 
+\begin{equation}
+L \equiv T -U =L(x_i, \;\dot{x}_i)
+\end{equation}
+\end{frame}
+%
+\begin{frame}
+\justifying
+\frametitle{}
+Entonces la Ec.~\ref{ec1} se transforma como,
+\begin{equation}
+\label{1}
+\delta \int_{t_1}^{t_2} L(x_i, \;\dot{x}_i) dt =0 
+\end{equation}
+o, efectuando la variación:
+\begin{eqnarray}
+\int_{t_1}^{t_2}\left( \frac{\partial L}{\partial x_i} - \frac{d}{dt} \frac{\partial L}{\partial \dot{x_i}} \right) \delta x dt =0 
+\end{eqnarray}
+\end{frame}
+%
+\begin{frame}
+\justifying
+\frametitle{}
+Consecuentemente se obtiene la ecuación:
+\begin{equation}
+\frac{\partial L}{\partial x_i} - \frac{d}{dt} \frac{\partial L}{\partial \dot{x_i}} = 0
+\end{equation}
+Estas son las ecuaciones de movimiento de Lagrange para la partícula, y la cantidad L es llamada la función Lagrangiana o el lagrangiano de la partícula.
+\end{frame}
+%
+\begin{frame}
+\justifying
+\frametitle{Coordenadas Generalizadas}
+\begin{itemize}
+\justifying
+\item Para determinar la posición de un sistema de $n$ puntos materiales en el espacio, hace falta dar $n$ vectores de posición, es decir, $3n$ coordenadas. \\ \ \\
+\item  Si existen $m$ ecuaciones de constricción que relaciona alguna de esta coordenada con otra, entonces $3n-m$ coordenadas son independientes, y se dice que el sistema posee $3n-m=s$ grados de libertad.
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+\justifying
+\frametitle{}
+\begin{itemize}
+\justifying
+\item Damos el nombre de coordenadas generalizadas a cualquier conjunto de cantidades que defina completamente la posición de un sistema.
+\item Las coordenadas generalizadas se acostumbra a escribirlas como $q_1, \; q_2,\ldots,$ o simplemente como $q_j$. Las derivadas $\dot{q}_j$ sus velocidades generalizadas.
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+\justifying
+\frametitle{Ecuaciones de Movimiento de Lagrange en Coordenadas Generalizadas}
+\begin{itemize}
+\justifying
+\item La lagrangiana para un sistema es definida a ser la diferencia entre la energía cinética y la energía potencial.
+\item Pero energía es una cantidad escalar y por lo tanto la Lagrangiana es una función escalar.
+\item Por lo que la Lagrangiana es invariante con respecto a transformación de coordenadas.
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+\justifying
+\frametitle{}
+ Expresamos la lagrangiana en terminos de $q_j$ y $\dot{q}_j$: 
+\begin{eqnarray}
+L &=& T(q_j, \, \dot{q}_j, \,t) - U(q_j,\,t) \nonumber \\
+ &=& L(q_j, \, \dot{q}_j, \,t)
+\end{eqnarray}
+Entonces el principio de Hamilton se expresa,
+\begin{equation}
+\delta \int_{t_1}^{t_2} L(q_j, \;\dot{q}_j) dt =0 
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\justifying
+\frametitle{}
+Efectuando la variación:
+\begin{eqnarray}
+\int_{t_1}^{t_2}\left( \frac{\partial L}{\partial q} - \frac{d}{dt} \frac{\partial L}{\partial \dot{q}} \right) \delta q dt =0 
+\end{eqnarray}
+y consecuentemente se obtiene la ecuación:
+\begin{equation}
+\frac{\partial L}{\partial x_i} - \frac{d}{dt} \frac{\partial L}{\partial \dot{x_i}} = 0
+\end{equation}
+Estas son las ecuaciones de movimiento de Euler-Lagrange del sistema. 
+\end{frame}
+
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+%\begin{frame}
+%
+%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section[]{}
+%%\subsection{}
+%\begin{frame}
+%\justifying
+%\frametitle{}
+%
+%\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+%
+%\begin{thebibliography}{99}
+%
+%\bibliography{test}
+%
+%\section[Bibliografía]{Bibliografía}
+%%\subsection{}
+%
+%\begin{frame}
+%\justifying
+%\frametitle{Bibliografía}
+%
+%\bibitem{ME} Ver por ejemplo, M. E. Peskin and D. V. Schroeder,
+%\textit{An introduction to quantum field theory}, Addison--Wesley
+%P.C. (1996).
+%\end{frame}
+%\end{thebibliography}
+
+
+\end{document}
